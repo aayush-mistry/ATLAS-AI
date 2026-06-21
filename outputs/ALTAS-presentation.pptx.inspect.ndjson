@@ -1,0 +1,193 @@
+{"kind":"deck","id":"pr/8q74ee","name":"Deck"}
+{"kind":"layout","layoutId":"325c0d0a-49be-4ab8-bf82-6d25439c7a41","name":"Master","type":"master"}
+{"kind":"layout","layoutId":"75a8b4db-47ef-4dfa-a5f2-bb29d3213d6b","name":"Title Slide","type":"title"}
+{"kind":"slide","id":"sl/0h6g7l","slide":1,"title":"ALTAS  |  Autonomous Legal Entity AI","textShapes":13}
+{"kind":"shape","id":"sh/e9cvixcz","slide":1,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/lwval87e","slide":1,"bbox":[-90,-100,280,280]}
+{"kind":"shape","id":"sh/wb2hwfyx","slide":1,"bbox":[1110,570,220,220]}
+{"kind":"textbox","id":"sh/3itgfmlk","slide":1,"text":"ALTAS  |  Autonomous Legal Entity AI","textPreview":"ALTAS  |  Autonomous Legal Entity AI","textChars":36,"textLines":1,"bbox":[72,662,420,24]}
+{"kind":"textbox","id":"sh/ex0nuxc3","slide":1,"text":"01","textPreview":"01","textChars":2,"textLines":1,"bbox":[1160,658,48,26]}
+{"kind":"shape","id":"sh/loj2t83i","slide":1,"bbox":[72,72,190,34]}
+{"kind":"textbox","id":"sh/w3m94fu1","slide":1,"text":"DEMO PRESENTATION","textPreview":"DEMO PRESENTATION","textChars":17,"textLines":1,"bbox":[88,79,158,20]}
+{"kind":"textbox","id":"sh/3ex0nuxc","slide":1,"text":"ALTAS","textPreview":"ALTAS","textChars":5,"textLines":1,"bbox":[72,164,520,86]}
+{"kind":"textbox","id":"sh/at47y1kr","slide":1,"text":"Autonomous Legal Entity AI","textPreview":"Autonomous Legal Entity AI","textChars":26,"textLines":1,"bbox":[76,252,620,46]}
+{"kind":"textbox","id":"sh/knih4byh","slide":1,"text":"An AI-operated business command center for treasury, operations, decisions, and transparent financial control.","textPreview":"An AI-operated business command center for treasury, operations, decisions, and transparent financial control.","textChars":110,"textLines":1,"bbox":[76,328,660,96]}
+{"kind":"shape","id":"sh/d8bat47y","slide":1,"bbox":[790,112,360,430]}
+{"kind":"shape","id":"sh/2lszqtcj","slide":1,"bbox":[840,170,250,154]}
+{"kind":"shape","id":"sh/v6psfil0","slide":1,"bbox":[840,170,5,154]}
+{"kind":"textbox","id":"sh/kf6dcbul","slide":1,"text":"TREASURY","textPreview":"TREASURY","textChars":8,"textLines":1,"bbox":[864,192,190,28]}
+{"kind":"textbox","id":"sh/d0z61032","slide":1,"text":"₹129K","textPreview":"₹129K","textChars":5,"textLines":1,"bbox":[864,228,190,46]}
+{"kind":"textbox","id":"sh/29gr2p8n","slide":1,"text":"Live wallet balance","textPreview":"Live wallet balance","textChars":19,"textLines":1,"bbox":[864,278,190,36]}
+{"kind":"shape","id":"sh/vu9knih4","slide":1,"bbox":[840,354,250,154]}
+{"kind":"shape","id":"sh/k3q5o7qp","slide":1,"bbox":[840,354,5,154]}
+{"kind":"textbox","id":"sh/donyd0z6","slide":1,"text":"MARKET","textPreview":"MARKET","textChars":6,"textLines":1,"bbox":[864,376,190,28]}
+{"kind":"textbox","id":"sh/hcrmhk3q","slide":1,"text":"Open","textPreview":"Open","textChars":4,"textLines":1,"bbox":[864,412,190,46]}
+{"kind":"textbox","id":"sh/orytsvu9","slide":1,"text":"Countdown aware","textPreview":"Countdown aware","textChars":15,"textLines":1,"bbox":[864,462,190,36]}
+{"kind":"shape","id":"sh/z61032ls","slide":1,"bbox":[860,560,210,34]}
+{"kind":"textbox","id":"sh/al87ed8b","slide":1,"text":"AI CEO READY","textPreview":"AI CEO READY","textChars":12,"textLines":1,"bbox":[876,567,178,20]}
+{"kind":"notes","id":"nt/0h6g7l","slide":1,"text":""}
+{"kind":"slide","id":"sl/h3b3ga","slide":2,"title":"ALTAS  |  Autonomous Legal Entity AI","textShapes":12}
+{"kind":"shape","id":"sh/sneloj2t","slide":2,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/32lszqtc","slide":2,"bbox":[-90,-100,280,280]}
+{"kind":"shape","id":"sh/ahoza1gv","slide":2,"bbox":[1110,570,220,220]}
+{"kind":"textbox","id":"sh/lkjm1cfa","slide":2,"text":"ALTAS  |  Autonomous Legal Entity AI","textPreview":"ALTAS  |  Autonomous Legal Entity AI","textChars":36,"textLines":1,"bbox":[72,662,420,24]}
+{"kind":"textbox","id":"sh/szqtcj6t","slide":2,"text":"02","textPreview":"02","textChars":2,"textLines":1,"bbox":[1160,658,48,26]}
+{"kind":"textbox","id":"sh/3ex0nuxc","slide":2,"text":"PROBLEM","textPreview":"PROBLEM","textChars":7,"textLines":1,"bbox":[72,56,560,32]}
+{"kind":"textbox","id":"sh/at47y1kr","slide":2,"text":"Small businesses still run on manual decisions","textPreview":"Small businesses still run on manual decisions","textChars":46,"textLines":1,"bbox":[72,100,780,92]}
+{"kind":"textbox","id":"sh/loj2t83i","slide":2,"text":"Pricing, sales, expenses, workers, treasury, and audits are usually spread across tools.","textPreview":"Pricing, sales, expenses, workers, treasury, and audits are usually spread across tools.","textChars":88,"textLines":1,"bbox":[72,196,760,64]}
+{"kind":"shape","id":"sh/w3m94fu1","slide":2,"bbox":[92,310,520,78]}
+{"kind":"textbox","id":"sh/udg7adsj","slide":2,"text":"Manual tracking","textPreview":"Manual tracking","textChars":15,"textLines":1,"bbox":[124,324,300,28]}
+{"kind":"textbox","id":"sh/nyd0z610","slide":2,"text":"Owners react late to revenue, expense, and cash-flow changes.","textPreview":"Owners react late to revenue, expense, and cash-flow changes.","textChars":61,"textLines":1,"bbox":[124,354,420,24]}
+{"kind":"shape","id":"sh/cj6tovah","slide":2,"bbox":[92,415,520,78]}
+{"kind":"textbox","id":"sh/54zidony","slide":2,"text":"Opaque automation","textPreview":"Opaque automation","textChars":17,"textLines":1,"bbox":[124,429,300,28]}
+{"kind":"textbox","id":"sh/upwb2hwf","slide":2,"text":"AI decisions often lack reasons, impact, and review trails.","textPreview":"AI decisions often lack reasons, impact, and review trails.","textChars":59,"textLines":1,"bbox":[124,459,420,24]}
+{"kind":"shape","id":"sh/nap4r65w","slide":2,"bbox":[92,520,520,78]}
+{"kind":"textbox","id":"sh/cvixczed","slide":2,"text":"Disconnected operations","textPreview":"Disconnected operations","textChars":23,"textLines":1,"bbox":[124,534,300,28]}
+{"kind":"textbox","id":"sh/5gbq1ory","slide":2,"text":"Sales, wallets, workers, and logs are not managed as one entity.","textPreview":"Sales, wallets, workers, and logs are not managed as one entity.","textChars":64,"textLines":1,"bbox":[124,564,420,24]}
+{"kind":"shape","id":"sh/u18jqh0f","slide":2,"bbox":[740,292,380,270]}
+{"kind":"textbox","id":"sh/jm1cfa9w","slide":2,"text":"Business owners need a single operational brain that is accountable, inspectable, and financially aware.","textPreview":"Business owners need a single operational brain that is accountable, inspectable, and financially aware.","textChars":104,"textLines":1,"bbox":[790,350,290,120]}
+{"kind":"notes","id":"nt/h3b3ga","slide":2,"text":""}
+{"kind":"slide","id":"sl/bpnprs","slide":3,"title":"ALTAS  |  Autonomous Legal Entity AI","textShapes":13}
+{"kind":"shape","id":"sh/36hcrmhk","slide":3,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/wra5gbq1","slide":3,"bbox":[-90,-100,280,280]}
+{"kind":"shape","id":"sh/lc7u54zi","slide":3,"bbox":[1110,570,220,220]}
+{"kind":"textbox","id":"sh/ed8bat47","slide":3,"text":"ALTAS  |  Autonomous Legal Entity AI","textPreview":"ALTAS  |  Autonomous Legal Entity AI","textChars":36,"textLines":1,"bbox":[72,662,420,24]}
+{"kind":"textbox","id":"sh/7u54zido","slide":3,"text":"03","textPreview":"03","textChars":2,"textLines":1,"bbox":[1160,658,48,26]}
+{"kind":"textbox","id":"sh/wfyxobm5","slide":3,"text":"SOLUTION","textPreview":"SOLUTION","textChars":8,"textLines":1,"bbox":[72,56,560,32]}
+{"kind":"textbox","id":"sh/l0rqd4vm","slide":3,"text":"ALTAS turns an entity into an autonomous operator","textPreview":"ALTAS turns an entity into an autonomous operator","textChars":49,"textLines":1,"bbox":[72,100,780,92]}
+{"kind":"textbox","id":"sh/e1w7mp0b","slide":3,"text":"The dashboard combines AI decisions, treasury management, analytics, and operating controls.","textPreview":"The dashboard combines AI decisions, treasury management, analytics, and operating controls.","textChars":92,"textLines":1,"bbox":[72,196,760,64]}
+{"kind":"shape","id":"sh/7mp0bi9s","slide":3,"bbox":[78,330,252,180]}
+{"kind":"shape","id":"sh/zed8v6ps","slide":3,"bbox":[78,330,252,4]}
+{"kind":"textbox","id":"sh/6xkf6dcb","slide":3,"text":"AI CEO","textPreview":"AI CEO","textChars":6,"textLines":1,"bbox":[102,360,190,32]}
+{"kind":"textbox","id":"sh/hk3q5o7q","slide":3,"text":"Explains actions and expected financial impact.","textPreview":"Explains actions and expected financial impact.","textChars":47,"textLines":1,"bbox":[102,408,190,72]}
+{"kind":"shape","id":"sh/oza1gvy9","slide":3,"bbox":[370,330,252,180]}
+{"kind":"shape","id":"sh/zqtcj6to","slide":3,"bbox":[370,330,252,4]}
+{"kind":"textbox","id":"sh/65wjudg7","slide":3,"text":"Treasury","textPreview":"Treasury","textChars":8,"textLines":1,"bbox":[394,360,190,32]}
+{"kind":"textbox","id":"sh/hwfyxobm","slide":3,"text":"Tracks balance, ledger, investments, and transfers.","textPreview":"Tracks balance, ledger, investments, and transfers.","textChars":51,"textLines":1,"bbox":[394,408,190,72]}
+{"kind":"shape","id":"sh/obm58z25","slide":3,"bbox":[662,330,252,180]}
+{"kind":"shape","id":"sh/zupwb2hw","slide":3,"bbox":[662,330,252,4]}
+{"kind":"textbox","id":"sh/a9w3m94f","slide":3,"text":"Operations","textPreview":"Operations","textChars":10,"textLines":1,"bbox":[686,360,190,32]}
+{"kind":"textbox","id":"sh/eloj2t83","slide":3,"text":"Controls business open/close state and worker readiness.","textPreview":"Controls business open/close state and worker readiness.","textChars":56,"textLines":1,"bbox":[686,408,190,72]}
+{"kind":"shape","id":"sh/36hcrmhk","slide":3,"bbox":[954,330,252,180]}
+{"kind":"shape","id":"sh/wra5gbq1","slide":3,"bbox":[954,330,252,4]}
+{"kind":"textbox","id":"sh/lc7u54zi","slide":3,"text":"Analytics","textPreview":"Analytics","textChars":9,"textLines":1,"bbox":[978,360,190,32]}
+{"kind":"textbox","id":"sh/ed8bat47","slide":3,"text":"Filters KPIs, charts, tables, and logs by date range.","textPreview":"Filters KPIs, charts, tables, and logs by date range.","textChars":53,"textLines":1,"bbox":[978,408,190,72]}
+{"kind":"notes","id":"nt/bpnprs","slide":3,"text":""}
+{"kind":"slide","id":"sl/1t9qb2","slide":4,"title":"ALTAS  |  Autonomous Legal Entity AI","textShapes":19}
+{"kind":"shape","id":"sh/za1gvy90","slide":4,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/svu9knih","slide":4,"bbox":[-90,-100,280,280]}
+{"kind":"shape","id":"sh/hgn29gr2","slide":4,"bbox":[1110,570,220,220]}
+{"kind":"textbox","id":"sh/a1gvy90j","slide":4,"text":"ALTAS  |  Autonomous Legal Entity AI","textPreview":"ALTAS  |  Autonomous Legal Entity AI","textChars":36,"textLines":1,"bbox":[72,662,420,24]}
+{"kind":"textbox","id":"sh/zidonyd0","slide":4,"text":"04","textPreview":"04","textChars":2,"textLines":1,"bbox":[1160,658,48,26]}
+{"kind":"textbox","id":"sh/s36hcrmh","slide":4,"text":"PRODUCT WALKTHROUGH","textPreview":"PRODUCT WALKTHROUGH","textChars":19,"textLines":1,"bbox":[72,56,560,32]}
+{"kind":"textbox","id":"sh/hoza1gvy","slide":4,"text":"One dashboard for decisions and money movement","textPreview":"One dashboard for decisions and money movement","textChars":46,"textLines":1,"bbox":[72,100,780,92]}
+{"kind":"textbox","id":"sh/a5gbq1or","slide":4,"text":"ALTAS surfaces the operational state, financial state, and AI reasoning in one command center.","textPreview":"ALTAS surfaces the operational state, financial state, and AI reasoning in one command center.","textChars":94,"textLines":1,"bbox":[72,196,760,64]}
+{"kind":"shape","id":"sh/3m94fu18","slide":4,"bbox":[76,306,250,154]}
+{"kind":"shape","id":"sh/zidonyd0","slide":4,"bbox":[76,306,5,154]}
+{"kind":"textbox","id":"sh/a1gvy90j","slide":4,"text":"TREASURY BALANCE","textPreview":"TREASURY BALANCE","textChars":16,"textLines":1,"bbox":[100,328,190,28]}
+{"kind":"textbox","id":"sh/hoza1gvy","slide":4,"text":"₹129,279","textPreview":"₹129,279","textChars":8,"textLines":1,"bbox":[100,364,190,46]}
+{"kind":"textbox","id":"sh/s36hcrmh","slide":4,"text":"Wallet, ledger, transact","textPreview":"Wallet, ledger, transact","textChars":24,"textLines":1,"bbox":[100,414,190,36]}
+{"kind":"shape","id":"sh/za1gvy90","slide":4,"bbox":[352,306,250,154]}
+{"kind":"shape","id":"sh/ap4r65wj","slide":4,"bbox":[352,306,5,154]}
+{"kind":"textbox","id":"sh/hgn29gr2","slide":4,"text":"NET PROFIT","textPreview":"NET PROFIT","textChars":10,"textLines":1,"bbox":[376,328,190,28]}
+{"kind":"textbox","id":"sh/svu9knih","slide":4,"text":"+₹4,180","textPreview":"+₹4,180","textChars":7,"textLines":1,"bbox":[376,364,190,46]}
+{"kind":"textbox","id":"sh/3ylc7u54","slide":4,"text":"Range-filtered P&L","textPreview":"Range-filtered P&L","textChars":18,"textLines":1,"bbox":[376,414,190,36]}
+{"kind":"shape","id":"sh/adsji5sn","slide":4,"bbox":[628,306,250,154]}
+{"kind":"shape","id":"sh/idonyd0z","slide":4,"bbox":[628,306,5,154]}
+{"kind":"textbox","id":"sh/byhgn29g","slide":4,"text":"REVENUE / EXPENSES","textPreview":"REVENUE / EXPENSES","textChars":18,"textLines":1,"bbox":[652,328,190,28]}
+{"kind":"textbox","id":"sh/0je9cvix","slide":4,"text":"80 / 0","textPreview":"80 / 0","textChars":6,"textLines":1,"bbox":[652,364,190,46]}
+{"kind":"textbox","id":"sh/t47y1kre","slide":4,"text":"Dynamic summaries","textPreview":"Dynamic summaries","textChars":17,"textLines":1,"bbox":[652,414,190,36]}
+{"kind":"shape","id":"sh/il0rqd4v","slide":4,"bbox":[904,306,250,154]}
+{"kind":"shape","id":"sh/b6xkf6dc","slide":4,"bbox":[904,306,5,154]}
+{"kind":"textbox","id":"sh/0rqd4vmt","slide":4,"text":"MARKET STATUS","textPreview":"MARKET STATUS","textChars":13,"textLines":1,"bbox":[928,328,190,28]}
+{"kind":"textbox","id":"sh/tcj6tova","slide":4,"text":"Open","textPreview":"Open","textChars":4,"textLines":1,"bbox":[928,364,190,46]}
+{"kind":"textbox","id":"sh/ixczed8v","slide":4,"text":"Hours + countdown","textPreview":"Hours + countdown","textChars":17,"textLines":1,"bbox":[928,414,190,36]}
+{"kind":"shape","id":"sh/bi9s36hc","slide":4,"bbox":[76,520,1128,78]}
+{"kind":"textbox","id":"sh/h0fepkzu","slide":4,"text":"Latest Operational Result","textPreview":"Latest Operational Result","textChars":25,"textLines":1,"bbox":[112,540,320,28]}
+{"kind":"textbox","id":"sh/sfil0rqd","slide":4,"text":"Sold 2 cups for ₹80. Balance updated instantly and reflected across KPIs, ledger, and analytics.","textPreview":"Sold 2 cups for ₹80. Balance updated instantly and reflected across KPIs, ledger, and analytics.","textChars":96,"textLines":1,"bbox":[112,570,900,26]}
+{"kind":"notes","id":"nt/1t9qb2","slide":4,"text":""}
+{"kind":"slide","id":"sl/uxulcy","slide":5,"title":"ALTAS  |  Autonomous Legal Entity AI","textShapes":10}
+{"kind":"shape","id":"sh/i9s36hcr","slide":5,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/p0bi9s36","slide":5,"bbox":[-90,-100,280,280]}
+{"kind":"shape","id":"sh/0fepkzup","slide":5,"bbox":[1110,570,220,220]}
+{"kind":"textbox","id":"sh/bi9s36hc","slide":5,"text":"ALTAS  |  Autonomous Legal Entity AI","textPreview":"ALTAS  |  Autonomous Legal Entity AI","textChars":36,"textLines":1,"bbox":[72,662,420,24]}
+{"kind":"textbox","id":"sh/ixczed8v","slide":5,"text":"05","textPreview":"05","textChars":2,"textLines":1,"bbox":[1160,658,48,26]}
+{"kind":"textbox","id":"sh/tovahoza","slide":5,"text":"KEY CAPABILITIES","textPreview":"KEY CAPABILITIES","textChars":16,"textLines":1,"bbox":[72,56,560,32]}
+{"kind":"textbox","id":"sh/032lszqt","slide":5,"text":"What ALTAS already demonstrates","textPreview":"What ALTAS already demonstrates","textChars":31,"textLines":1,"bbox":[72,100,780,92]}
+{"kind":"textbox","id":"sh/b6xkf6dc","slide":5,"text":"The current prototype is structured for backend/API replacement where mock data is used today.","textPreview":"The current prototype is structured for backend/API replacement where mock data is used today.","textChars":94,"textLines":1,"bbox":[72,196,760,64]}
+{"kind":"shape","id":"sh/il0rqd4v","slide":5,"bbox":[94,292,24,24]}
+{"kind":"textbox","id":"sh/ovahoza1","slide":5,"text":"Rebranded ALTAS experience with responsive dark dashboard UI.","textPreview":"Rebranded ALTAS experience with responsive dark dashboard UI.","textChars":61,"textLines":1,"bbox":[142,288,870,34]}
+{"kind":"shape","id":"sh/dg7adsji","slide":5,"bbox":[94,354,24,24]}
+{"kind":"textbox","id":"sh/6tovahoz","slide":5,"text":"Market status card with open/closed state, market hours, and countdown.","textPreview":"Market status card with open/closed state, market hours, and countdown.","textChars":71,"textLines":1,"bbox":[142,350,870,34]}
+{"kind":"shape","id":"sh/vahoza1g","slide":5,"bbox":[94,416,24,24]}
+{"kind":"textbox","id":"sh/onyd0z61","slide":5,"text":"Date range filters: Today, Yesterday, Last 7 Days, This Month, Last Month, and Custom.","textPreview":"Date range filters: Today, Yesterday, Last 7 Days, This Month, Last Month, and Custom.","textChars":86,"textLines":1,"bbox":[142,412,870,34]}
+{"kind":"shape","id":"sh/d8v6psfi","slide":5,"bbox":[94,478,24,24]}
+{"kind":"textbox","id":"sh/6hcrmhk3","slide":5,"text":"Filtered KPIs, charts, tables, transactions, P&L, revenue, expenses, investments, and AI actions.","textPreview":"Filtered KPIs, charts, tables, transactions, P&L, revenue, expenses, investments, and AI actions.","textChars":97,"textLines":1,"bbox":[142,474,870,34]}
+{"kind":"shape","id":"sh/z25kb6xk","slide":5,"bbox":[94,540,24,24]}
+{"kind":"textbox","id":"sh/oj2t83it","slide":5,"text":"AI CEO action log with reason, expected impact, and operational result feedback.","textPreview":"AI CEO action log with reason, expected impact, and operational result feedback.","textChars":80,"textLines":1,"bbox":[142,536,870,34]}
+{"kind":"notes","id":"nt/uxulcy","slide":5,"text":""}
+{"kind":"slide","id":"sl/bcll86","slide":6,"title":"ALTAS  |  Autonomous Legal Entity AI","textShapes":16}
+{"kind":"shape","id":"sh/tcj6tova","slide":6,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/il0rqd4v","slide":6,"bbox":[-90,-100,280,280]}
+{"kind":"shape","id":"sh/b6xkf6dc","slide":6,"bbox":[1110,570,220,220]}
+{"kind":"textbox","id":"sh/0je9cvix","slide":6,"text":"ALTAS  |  Autonomous Legal Entity AI","textPreview":"ALTAS  |  Autonomous Legal Entity AI","textChars":36,"textLines":1,"bbox":[72,662,420,24]}
+{"kind":"textbox","id":"sh/t47y1kre","slide":6,"text":"06","textPreview":"06","textChars":2,"textLines":1,"bbox":[1160,658,48,26]}
+{"kind":"textbox","id":"sh/idonyd0z","slide":6,"text":"ARCHITECTURE","textPreview":"ARCHITECTURE","textChars":12,"textLines":1,"bbox":[72,56,560,32]}
+{"kind":"textbox","id":"sh/byhgn29g","slide":6,"text":"Built for real APIs and smart-contract workflows","textPreview":"Built for real APIs and smart-contract workflows","textChars":48,"textLines":1,"bbox":[72,100,780,92]}
+{"kind":"textbox","id":"sh/0fepkzup","slide":6,"text":"Mock/local data keeps the demo fast, while modules are separated for future integration.","textPreview":"Mock/local data keeps the demo fast, while modules are separated for future integration.","textChars":88,"textLines":1,"bbox":[72,196,760,64]}
+{"kind":"shape","id":"sh/p0bi9s36","slide":6,"bbox":[96,330,210,150]}
+{"kind":"textbox","id":"sh/x0nuxc3y","slide":6,"text":"Frontend","textPreview":"Frontend","textChars":8,"textLines":1,"bbox":[118,352,160,30]}
+{"kind":"textbox","id":"sh/4fu18jqh","slide":6,"text":"Next.js dashboard\nResponsive analytics UI","textPreview":"Next.js dashboard | Responsive analytics UI","textChars":41,"textLines":2,"bbox":[118,392,160,72]}
+{"kind":"shape","id":"sh/fu18jqh0","slide":6,"bbox":[390,330,210,150]}
+{"kind":"textbox","id":"sh/m94fu18j","slide":6,"text":"Analytics Layer","textPreview":"Analytics Layer","textChars":15,"textLines":1,"bbox":[412,352,160,30]}
+{"kind":"textbox","id":"sh/xobm58z2","slide":6,"text":"Date ranges\nMarket status\nSummaries","textPreview":"Date ranges | Market status | Summaries","textChars":35,"textLines":3,"bbox":[412,392,160,72]}
+{"kind":"shape","id":"sh/83itgfml","slide":6,"bbox":[684,330,210,150]}
+{"kind":"textbox","id":"sh/fil0rqd4","slide":6,"text":"AI CEO","textPreview":"AI CEO","textChars":6,"textLines":1,"bbox":[706,352,160,30]}
+{"kind":"textbox","id":"sh/qxs72x4n","slide":6,"text":"Decision tick\nReasoning log\nExpected impact","textPreview":"Decision tick | Reasoning log | Expected impact","textChars":43,"textLines":3,"bbox":[706,392,160,72]}
+{"kind":"shape","id":"sh/xkf6dcbu","slide":6,"bbox":[978,330,210,150]}
+{"kind":"textbox","id":"sh/4zidonyd","slide":6,"text":"Backends","textPreview":"Backends","textChars":8,"textLines":1,"bbox":[1000,352,160,30]}
+{"kind":"textbox","id":"sh/0fepkzup","slide":6,"text":"Wallet API\nSales API\nJobs API","textPreview":"Wallet API | Sales API | Jobs API","textChars":29,"textLines":3,"bbox":[1000,392,160,72]}
+{"kind":"textbox","id":"sh/p0bi9s36","slide":6,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[322,374,44,46]}
+{"kind":"textbox","id":"sh/i9s36hcr","slide":6,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[616,374,44,46]}
+{"kind":"textbox","id":"sh/bulwval8","slide":6,"text":"→","textPreview":"→","textChars":1,"textLines":1,"bbox":[910,374,44,46]}
+{"kind":"notes","id":"nt/bcll86","slide":6,"text":""}
+{"kind":"slide","id":"sl/r7ldep","slide":7,"title":"ALTAS  |  Autonomous Legal Entity AI","textShapes":16}
+{"kind":"shape","id":"sh/s72x4nap","slide":7,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/3m94fu18","slide":7,"bbox":[-90,-100,280,280]}
+{"kind":"shape","id":"sh/a5gbq1or","slide":7,"bbox":[1110,570,220,220]}
+{"kind":"textbox","id":"sh/h4byhgn2","slide":7,"text":"ALTAS  |  Autonomous Legal Entity AI","textPreview":"ALTAS  |  Autonomous Legal Entity AI","textChars":36,"textLines":1,"bbox":[72,662,420,24]}
+{"kind":"textbox","id":"sh/sji5snel","slide":7,"text":"07","textPreview":"07","textChars":2,"textLines":1,"bbox":[1160,658,48,26]}
+{"kind":"textbox","id":"sh/3ylc7u54","slide":7,"text":"PROJECT LINKS","textPreview":"PROJECT LINKS","textChars":13,"textLines":1,"bbox":[72,56,560,32]}
+{"kind":"textbox","id":"sh/adsji5sn","slide":7,"text":"Demo & Community Links","textPreview":"Demo & Community Links","textChars":22,"textLines":1,"bbox":[72,100,780,92]}
+{"kind":"textbox","id":"sh/hgn29gr2","slide":7,"text":"Add final URLs before submission or recording. The layout intentionally leaves room for a QR code or short links.","textPreview":"Add final URLs before submission or recording. The layout intentionally leaves room for a QR code or short links.","textChars":113,"textLines":1,"bbox":[72,196,760,64]}
+{"kind":"textbox","id":"sh/svu9knih","slide":7,"text":"Demo video","textPreview":"Demo video","textChars":10,"textLines":1,"bbox":[120,284,190,28]}
+{"kind":"shape","id":"sh/ed8bat47","slide":7,"bbox":[340,276,760,44]}
+{"kind":"textbox","id":"sh/7u54zido","slide":7,"text":"Paste YouTube / Drive / Loom URL here","textPreview":"Paste YouTube / Drive / Loom URL here","textChars":37,"textLines":1,"bbox":[364,287,700,24]}
+{"kind":"textbox","id":"sh/wfyxobm5","slide":7,"text":"GitHub repo","textPreview":"GitHub repo","textChars":11,"textLines":1,"bbox":[120,346,190,28]}
+{"kind":"shape","id":"sh/l0rqd4vm","slide":7,"bbox":[340,338,760,44]}
+{"kind":"textbox","id":"sh/eloj2t83","slide":7,"text":"Paste repository URL here","textPreview":"Paste repository URL here","textChars":25,"textLines":1,"bbox":[364,349,700,24]}
+{"kind":"textbox","id":"sh/36hcrmhk","slide":7,"text":"LinkedIn post","textPreview":"LinkedIn post","textChars":13,"textLines":1,"bbox":[120,408,190,28]}
+{"kind":"shape","id":"sh/wra5gbq1","slide":7,"bbox":[340,400,760,44]}
+{"kind":"textbox","id":"sh/lc7u54zi","slide":7,"text":"Paste LinkedIn profile or launch post here","textPreview":"Paste LinkedIn profile or launch post here","textChars":42,"textLines":1,"bbox":[364,411,700,24]}
+{"kind":"textbox","id":"sh/epkzupwb","slide":7,"text":"Reddit post","textPreview":"Reddit post","textChars":11,"textLines":1,"bbox":[120,470,190,28]}
+{"kind":"shape","id":"sh/7adsji5s","slide":7,"bbox":[340,462,760,44]}
+{"kind":"textbox","id":"sh/z61032ls","slide":7,"text":"Paste Reddit community/showcase URL here","textPreview":"Paste Reddit community/showcase URL here","textChars":40,"textLines":1,"bbox":[364,473,700,24]}
+{"kind":"textbox","id":"sh/al87ed8b","slide":7,"text":"Other","textPreview":"Other","textChars":5,"textLines":1,"bbox":[120,532,190,28]}
+{"kind":"shape","id":"sh/hcrmhk3q","slide":7,"bbox":[340,524,760,44]}
+{"kind":"textbox","id":"sh/orytsvu9","slide":7,"text":"Pitch deck, live demo, X/Twitter, website, or docs","textPreview":"Pitch deck, live demo, X/Twitter, website, or docs","textChars":50,"textLines":1,"bbox":[364,535,700,24]}
+{"kind":"shape","id":"sh/zupwb2hw","slide":7,"bbox":[1118,284,84,84]}
+{"kind":"textbox","id":"sh/a9w3m94f","slide":7,"text":"QR","textPreview":"QR","textChars":2,"textLines":1,"bbox":[1122,310,76,28]}
+{"kind":"notes","id":"nt/r7ldep","slide":7,"text":""}
+{"kind":"slide","id":"sl/hfb4n7","slide":8,"title":"ALTAS  |  Autonomous Legal Entity AI","textShapes":7}
+{"kind":"shape","id":"sh/z61032ls","slide":8,"bbox":[0,0,1280,720]}
+{"kind":"shape","id":"sh/orytsvu9","slide":8,"bbox":[-90,-100,280,280]}
+{"kind":"shape","id":"sh/hcrmhk3q","slide":8,"bbox":[1110,570,220,220]}
+{"kind":"textbox","id":"sh/a9w3m94f","slide":8,"text":"ALTAS  |  Autonomous Legal Entity AI","textPreview":"ALTAS  |  Autonomous Legal Entity AI","textChars":36,"textLines":1,"bbox":[72,662,420,24]}
+{"kind":"textbox","id":"sh/zupwb2hw","slide":8,"text":"08","textPreview":"08","textChars":2,"textLines":1,"bbox":[1160,658,48,26]}
+{"kind":"shape","id":"sh/sfil0rqd","slide":8,"bbox":[72,72,120,34]}
+{"kind":"textbox","id":"sh/h0fepkzu","slide":8,"text":"CLOSING","textPreview":"CLOSING","textChars":7,"textLines":1,"bbox":[88,79,88,20]}
+{"kind":"textbox","id":"sh/65wjudg7","slide":8,"text":"ALTAS","textPreview":"ALTAS","textChars":5,"textLines":1,"bbox":[72,168,520,80]}
+{"kind":"textbox","id":"sh/zqtcj6to","slide":8,"text":"Autonomous Legal Entity AI","textPreview":"Autonomous Legal Entity AI","textChars":26,"textLines":1,"bbox":[76,246,620,42]}
+{"kind":"textbox","id":"sh/zupwb2hw","slide":8,"text":"Transparent AI operations for treasury, sales, workers, decisions, and entity-level accountability.","textPreview":"Transparent AI operations for treasury, sales, workers, decisions, and entity-level accountability.","textChars":99,"textLines":1,"bbox":[76,330,720,82]}
+{"kind":"textbox","id":"sh/a9w3m94f","slide":8,"text":"Thank you","textPreview":"Thank you","textChars":9,"textLines":1,"bbox":[76,492,360,56]}
+{"kind":"notes","id":"nt/hfb4n7","slide":8,"text":""}
