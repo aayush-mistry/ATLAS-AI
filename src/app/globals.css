@@ -12,15 +12,417 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Spatial dashboard layer: adds depth, material, and map-like hierarchy
+   without changing the data-heavy component structure. */
+.spatial-shell {
+  --spatial-ink: #14213d;
+  --spatial-muted: #64748b;
+  --spatial-line: rgba(20, 33, 61, 0.1);
+  --spatial-panel: rgba(255, 255, 255, 0.82);
+  --spatial-panel-strong: rgba(255, 255, 255, 0.94);
+  --spatial-shadow: 0 24px 70px rgba(20, 33, 61, 0.14), 0 8px 24px rgba(20, 33, 61, 0.08);
+  --spatial-shadow-lift: 0 34px 90px rgba(20, 33, 61, 0.2), 0 12px 32px rgba(16, 185, 129, 0.1);
+  isolation: isolate;
+  position: relative;
+  overflow-x: clip;
+  color: var(--spatial-ink) !important;
+  background:
+    radial-gradient(circle at 12% 8%, rgba(16, 185, 129, 0.18), transparent 30rem),
+    radial-gradient(circle at 86% 16%, rgba(37, 99, 235, 0.14), transparent 28rem),
+    radial-gradient(circle at 55% 88%, rgba(245, 158, 11, 0.12), transparent 26rem),
+    linear-gradient(135deg, #f8fafc 0%, #eef6f2 48%, #f7fbff 100%) !important;
+}
+
+.spatial-shell::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(20, 33, 61, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(20, 33, 61, 0.055) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent 82%);
+}
+
+.spatial-shell::after {
+  content: "";
+  position: fixed;
+  inset: auto 6vw 0;
+  height: 32vh;
+  z-index: -1;
+  pointer-events: none;
+  background: radial-gradient(ellipse at center, rgba(20, 33, 61, 0.12), transparent 68%);
+  filter: blur(24px);
+  transform: translateY(45%);
+}
+
+.spatial-shell > header {
+  top: 14px;
+  margin: 14px auto 0;
+  width: min(calc(100% - 24px), 86rem);
+  border: 1px solid rgba(255, 255, 255, 0.72) !important;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(241, 248, 255, 0.76)) !important;
+  box-shadow: var(--spatial-shadow);
+  backdrop-filter: blur(22px) saturate(140%);
+}
+
+.spatial-shell > header > div {
+  height: auto;
+  min-height: 76px;
+}
+
+.spatial-shell main {
+  width: min(100%, 86rem);
+  perspective: 1400px;
+}
+
+.spatial-shell main > section,
+.spatial-shell main > div:not([class*="fixed"]) {
+  transform-style: preserve-3d;
+}
+
+.spatial-shell main > section:nth-of-type(1) {
+  transform: translateZ(28px);
+}
+
+.spatial-shell main > section:nth-of-type(2),
+.spatial-shell main > section:nth-of-type(3) {
+  transform: translateZ(12px);
+}
+
+.spatial-shell .bg-zinc-900\/50,
+.spatial-shell .bg-zinc-900\/40,
+.spatial-shell .bg-zinc-900\/60,
+.spatial-shell .bg-zinc-900,
+.spatial-shell .bg-zinc-950\/30,
+.spatial-shell .bg-zinc-950\/40,
+.spatial-shell .bg-zinc-950\/60,
+.spatial-shell .bg-zinc-950 {
+  background: var(--spatial-panel) !important;
+  backdrop-filter: blur(18px) saturate(132%);
+}
+
+.spatial-shell .rounded-2xl {
+  border-radius: 22px !important;
+}
+
+.spatial-shell .rounded-xl {
+  border-radius: 16px !important;
+}
+
+.spatial-shell .border,
+.spatial-shell .border-b {
+  border-color: rgba(20, 33, 61, 0.11) !important;
+}
+
+.spatial-shell section.bg-zinc-900\/50,
+.spatial-shell div.bg-zinc-900\/50,
+.spatial-shell div.bg-zinc-900\/40,
+.spatial-shell div.bg-zinc-950\/30,
+.spatial-shell div.bg-zinc-950\/40,
+.spatial-shell div.bg-zinc-950\/60 {
+  box-shadow: var(--spatial-shadow);
+}
+
+.spatial-shell section.bg-zinc-900\/50,
+.spatial-shell main > section > div.bg-zinc-900\/50,
+.spatial-shell main > section > div.bg-zinc-900\/40,
+.spatial-shell main > div.bg-zinc-900\/40,
+.spatial-shell main > div.bg-zinc-900\/50 {
+  position: relative;
+  overflow: hidden;
+}
+
+.spatial-shell section.bg-zinc-900\/50::before,
+.spatial-shell main > section > div.bg-zinc-900\/50::before,
+.spatial-shell main > section > div.bg-zinc-900\/40::before,
+.spatial-shell main > div.bg-zinc-900\/40::before,
+.spatial-shell main > div.bg-zinc-900\/50::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.9), transparent 34%),
+    radial-gradient(circle at 85% 12%, rgba(16, 185, 129, 0.1), transparent 15rem);
+  opacity: 0.8;
+}
+
+.spatial-shell main > section > *,
+.spatial-shell main > div > * {
+  position: relative;
+  z-index: 1;
+}
+
+.spatial-shell main > section > div,
+.spatial-shell main > div,
+.spatial-shell button,
+.spatial-shell a,
+.spatial-shell input {
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    color 180ms ease;
+}
+
+.spatial-shell main > section > div:hover,
+.spatial-shell main > div.bg-zinc-900\/40:hover,
+.spatial-shell main > div.bg-zinc-900\/50:hover {
+  transform: translateY(-4px) translateZ(18px);
+  box-shadow: var(--spatial-shadow-lift);
+}
+
+.spatial-shell button,
+.spatial-shell a[href] {
+  box-shadow: 0 8px 18px rgba(20, 33, 61, 0.08);
+}
+
+.spatial-shell button:hover,
+.spatial-shell a[href]:hover {
+  transform: translateY(-1px);
+}
+
+.spatial-shell button:active,
+.spatial-shell a[href]:active {
+  transform: translateY(1px) scale(0.99);
+}
+
+.spatial-shell input {
+  background: rgba(255, 255, 255, 0.78) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82), 0 8px 18px rgba(20, 33, 61, 0.05);
+}
+
+.spatial-shell input:focus {
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.13), 0 12px 26px rgba(20, 33, 61, 0.1);
+}
+
+.spatial-shell .shadow-inner {
+  box-shadow: inset 0 2px 16px rgba(20, 33, 61, 0.08) !important;
+}
+
+.spatial-shell [class*="bg-gradient-to-tr"] {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.55),
+    0 12px 24px rgba(16, 185, 129, 0.2) !important;
+}
+
+.spatial-shell .fixed.inset-0 {
+  background:
+    radial-gradient(circle at 50% 20%, rgba(255, 255, 255, 0.24), transparent 24rem),
+    rgba(15, 23, 42, 0.42) !important;
+}
+
+.spatial-shell .fixed.inset-0 > div {
+  background: var(--spatial-panel-strong) !important;
+  box-shadow: 0 34px 120px rgba(15, 23, 42, 0.34), 0 0 0 1px rgba(255, 255, 255, 0.7);
+  transform: translateZ(40px);
+}
+
+.spatial-ledger section:first-of-type > div {
+  min-height: 154px;
+}
+
+.spatial-ledger section:last-of-type {
+  box-shadow: var(--spatial-shadow);
+}
+
+@media (max-width: 768px) {
+  .spatial-shell > header {
+    top: 8px;
+    margin-top: 8px;
+    border-radius: 18px;
+  }
+
+  .spatial-shell > header > div {
+    min-height: 0;
+    align-items: flex-start;
+    gap: 12px;
+    padding-block: 14px;
+  }
+
+  .spatial-shell main > section:nth-of-type(n),
+  .spatial-shell main > section > div:hover,
+  .spatial-shell main > div.bg-zinc-900\/40:hover,
+  .spatial-shell main > div.bg-zinc-900\/50:hover {
+    transform: none;
+  }
+}
+
+/* Light dashboard theme overrides for the existing Tailwind utility palette. */
+.bg-zinc-950,
+.bg-zinc-950\/80 {
+  background-color: #f8fafc !important;
+}
+
+.bg-zinc-950\/20,
+.bg-zinc-950\/30,
+.bg-zinc-950\/40,
+.bg-zinc-950\/60 {
+  background-color: #f8fafc !important;
+}
+
+.bg-zinc-900,
+.bg-zinc-900\/40,
+.bg-zinc-900\/50,
+.bg-zinc-900\/60 {
+  background-color: rgba(255, 255, 255, 0.94) !important;
+}
+
+.bg-zinc-800,
+.bg-zinc-800\/80 {
+  background-color: #f1f5f9 !important;
+}
+
+.hover\:bg-zinc-700:hover,
+.hover\:bg-zinc-800:hover,
+.hover\:bg-zinc-950\/40:hover,
+.hover\:bg-zinc-950\/60:hover {
+  background-color: #e2e8f0 !important;
+}
+
+.border-zinc-700,
+.border-zinc-800,
+.border-zinc-800\/50,
+.border-zinc-800\/80,
+.border-zinc-850,
+.border-zinc-850\/50 {
+  border-color: #e2e8f0 !important;
+}
+
+.text-zinc-100,
+.text-zinc-200,
+.text-zinc-300 {
+  color: #1e293b !important;
+}
+
+.text-zinc-400 {
+  color: #64748b !important;
+}
+
+.text-zinc-500,
+.text-zinc-600 {
+  color: #475569 !important;
+}
+
+header .text-white,
+main section .text-white,
+.bg-zinc-900 .text-white,
+.bg-zinc-900\/40 .text-white,
+.bg-zinc-900\/50 .text-white,
+.bg-zinc-950\/40 .text-white,
+.bg-zinc-950\/60 .text-white {
+  color: #0f172a !important;
+}
+
+.bg-emerald-950\/10,
+.bg-emerald-950\/20,
+.bg-emerald-950\/30 {
+  background-color: #ecfdf5 !important;
+}
+
+.bg-rose-950\/10,
+.bg-rose-950\/20,
+.bg-rose-950\/30 {
+  background-color: #fff1f2 !important;
+}
+
+.bg-blue-950\/20,
+.bg-blue-950\/30 {
+  background-color: #eff6ff !important;
+}
+
+.bg-amber-950\/10,
+.bg-amber-950\/20 {
+  background-color: #fffbeb !important;
+}
+
+.bg-purple-950\/20 {
+  background-color: #faf5ff !important;
+}
+
+.text-emerald-300,
+.text-emerald-400 {
+  color: #047857 !important;
+}
+
+.text-rose-200,
+.text-rose-300,
+.text-rose-400 {
+  color: #be123c !important;
+}
+
+.text-blue-400 {
+  color: #1d4ed8 !important;
+}
+
+.text-sky-400 {
+  color: #0369a1 !important;
+}
+
+.text-amber-400 {
+  color: #b45309 !important;
+}
+
+.text-purple-400 {
+  color: #7e22ce !important;
+}
+
+.bg-emerald-500 {
+  background-color: #059669 !important;
+}
+
+.hover\:bg-emerald-400:hover,
+.hover\:bg-emerald-500\/20:hover,
+.hover\:bg-emerald-500\/25:hover {
+  background-color: #047857 !important;
+}
+
+.bg-blue-600 {
+  background-color: #2563eb !important;
+}
+
+.hover\:bg-blue-500:hover,
+.hover\:bg-blue-600:hover {
+  background-color: #1d4ed8 !important;
+}
+
+.bg-rose-500 {
+  background-color: #e11d48 !important;
+}
+
+.hover\:bg-rose-400:hover,
+.hover\:bg-rose-500\/25:hover {
+  background-color: #be123c !important;
+}
+
+.shadow-emerald-500\/10,
+.shadow-emerald-500\/20,
+.shadow-blue-500\/15,
+.shadow-rose-500\/10,
+.shadow-rose-950\/20 {
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08) !important;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 15s linear infinite;
 }

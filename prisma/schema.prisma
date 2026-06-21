@@ -1,0 +1,92 @@
+datasource db {
+  provider = "sqlite"
+}
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+model User {
+  id           String        @id @default(uuid())
+  name         String
+  wallet       String        @unique
+  role         String        @default("WORKER") // "WORKER" | "CEO"
+  applications Application[]
+  createdAt    DateTime      @default(now())
+}
+
+model Job {
+  id           String        @id @default(uuid())
+  title        String
+  payment      Float
+  status       String        @default("OPEN") // "OPEN" | "ASSIGNED" | "COMPLETED" | "PAID"
+  workerWallet String?       // Wallet address of the worker assigned
+  applications Application[]
+  createdAt    DateTime      @default(now())
+}
+
+model Application {
+  id        String   @id @default(uuid())
+  jobId     String
+  job       Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  workerId  String
+  worker    User     @relation(fields: [workerId], references: [id], onDelete: Cascade)
+  status    String   @default("PENDING") // "PENDING" | "APPROVED" | "REJECTED"
+  createdAt DateTime @default(now())
+}
+
+model Inventory {
+  id        String   @id @default(uuid())
+  item      String   @unique // "Lemons" | "Sugar" | "Cups" | "Ice"
+  quantity  Int
+  unitCost  Float
+  updatedAt DateTime @updatedAt
+}
+
+model Transaction {
+  id          String   @id @default(uuid())
+  type        String   // "DEPOSIT" | "WITHDRAWAL" | "INVENTORY_BUY" | "PAYMENT"
+  amount      Float
+  txHash      String?  // Blockchain transaction hash
+  description String   @default("")
+  entity      String   @default("")
+  timestamp   DateTime @default(now())
+}
+
+model Decision {
+  id             String   @id @default(uuid())
+  action         String   // "BUY_INVENTORY" | "INCREASE_PRICES" | "REDUCE_PRICES" | "HIRE_WORKER" | "PAY_WORKER" | "SAVE_FUNDS"
+  reason         String
+  expectedImpact String
+  timestamp      DateTime @default(now())
+}
+
+model ActivityLog {
+  id        String   @id @default(uuid())
+  message   String
+  timestamp DateTime @default(now())
+}
+
+model BusinessState {
+  id            String   @id @default("singleton")
+  shopOpen      Boolean  @default(true)
+  walletBalance Float    @default(5000.0) // Starting funds in ₹ (e.g. 5000)
+  walletAddress String   @default("0x8eCe6838D6CAd5F62A4FE7CEaC32Ff14aE9f6920") // Mock treasury wallet
+  lemonadePrice Float    @default(20.0)   // Price per cup in ₹
+  revenue       Float    @default(0.0)
+  expenses      Float    @default(0.0)
+  profit        Float    @default(0.0)
+  updatedAt     DateTime @updatedAt
+}
+
+model MarketCondition {
+  id         String   @id @default("singleton")
+  weather    String   @default("Sunny") // "Sunny" | "Cloudy" | "Rainy" | "Hot"
+  lemonPrice Float    @default(4.0)     // Cost per lemon in ₹
+  sugarPrice Float    @default(2.0)     // Cost per unit of sugar
+  cupPrice   Float    @default(1.0)     // Cost per cup
+  icePrice   Float    @default(0.5)     // Cost per ice cube
+  demandLevel Float    @default(0.8)     // 0.0 to 1.0 multiplier
+  updatedAt  DateTime @updatedAt
+}
