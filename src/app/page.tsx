@@ -1286,21 +1286,21 @@ export default function Dashboard() {
             {mounted ? (
               <ResponsiveContainer width="100%" height="100%">
                 <LineChart data={getChartData(filteredTransactions)} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
-                  <CartesianGrid strokeDasharray="3 3" stroke="#27272a" />
-                  <XAxis dataKey="name" stroke="#71717a" fontSize={10} tickLine={false} />
-                  <YAxis stroke="#71717a" fontSize={10} tickLine={false} tickFormatter={(v) => `₹${v}`} />
+                  <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" />
+                  <XAxis dataKey="name" stroke="#8b919d" fontSize={10} tickLine={false} />
+                  <YAxis stroke="#8b919d" fontSize={10} tickLine={false} tickFormatter={(v) => `₹${v}`} />
                   <Tooltip
-                    contentStyle={{ backgroundColor: "#18181b", borderColor: "#3f3f46", color: "#e4e4e7" }}
-                    labelStyle={{ color: "#a1a1aa", fontSize: 11 }}
-                    itemStyle={{ color: "#10b981" }}
+                    contentStyle={{ backgroundColor: "#0b0d10", borderColor: "rgba(255,255,255,0.1)", color: "#f7f8fb" }}
+                    labelStyle={{ color: "#a7adb7", fontSize: 11 }}
+                    itemStyle={{ color: "#8b63ff" }}
                     formatter={(value) => value !== undefined && value !== null ? [`₹${parseFloat(value.toString()).toFixed(2)}`, "Wallet Balance"] : ["₹0.00", "Wallet Balance"]}
                   />
                   <Line
                     type="monotone"
                     dataKey="balance"
-                    stroke="#10b981"
+                    stroke="#8b63ff"
                     strokeWidth={3}
-                    dot={{ fill: "#10b981", strokeWidth: 1 }}
+                    dot={{ fill: "#8b63ff", strokeWidth: 1 }}
                     activeDot={{ r: 6 }}
                   />
                 </LineChart>
@@ -1788,9 +1788,9 @@ export default function Dashboard() {
                     <div className="w-full h-64">
                       <ResponsiveContainer width="100%" height="100%">
                         <BarChart data={getDecisionChartData(filteredDecisions)} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
-                          <CartesianGrid strokeDasharray="3 3" stroke="#27272a" />
-                          <XAxis dataKey="index" stroke="#71717a" fontSize={10} tickLine={false} />
-                          <YAxis stroke="#71717a" fontSize={10} tickLine={false} tickFormatter={(v) => `₹${v}`} />
+                          <CartesianGrid strokeDasharray="3 3" stroke="rgba(255,255,255,0.08)" />
+                          <XAxis dataKey="index" stroke="#8b919d" fontSize={10} tickLine={false} />
+                          <YAxis stroke="#8b919d" fontSize={10} tickLine={false} tickFormatter={(v) => `₹${v}`} />
                           <Tooltip
                             content={({ active, payload }) => {
                               if (active && payload && payload.length) {
@@ -1814,12 +1814,12 @@ export default function Dashboard() {
                               return null;
                             }}
                           />
-                          <ReferenceLine y={0} stroke="#3f3f46" strokeWidth={1} />
+                          <ReferenceLine y={0} stroke="rgba(255,255,255,0.16)" strokeWidth={1} />
                           <Bar dataKey="impact">
                             {getDecisionChartData(filteredDecisions).map((entry, index) => (
                               <Cell
                                 key={`cell-${index}`}
-                                fill={entry.impact >= 0 ? "#10b981" : "#f43f5e"}
+                                fill={entry.impact >= 0 ? "#28c7df" : "#ff4c5b"}
                               />
                             ))}
                           </Bar>
