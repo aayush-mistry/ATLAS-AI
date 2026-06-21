@@ -46,7 +46,7 @@ export async function runAICeodecision(): Promise<DecisionResult> {
   if (apiKey) {
     try {
       console.log("Calling OpenAI GPT-4o API for CEO decision...");
-      const systemPrompt = `You are the AI CEO of an autonomous lemonade stand business called "Autonomous Legal Entity AI".
+      const systemPrompt = `You are the AI CEO of an autonomous lemonade stand business called "ALTAS" (Autonomous Legal Entity AI).
 You make decisions, manage funds, hire workers, and execute payments without human intervention.
 Every 60 seconds you analyze the business state and return your next action.
 

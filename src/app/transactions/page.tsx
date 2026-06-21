@@ -18,7 +18,17 @@ import {
   ShoppingCart,
   CreditCard,
   Banknote,
+  CalendarDays,
 } from "lucide-react";
+import {
+  DATE_FILTER_OPTIONS,
+  DateFilterKey,
+  filterByDateRange,
+  formatDateRangeLabel,
+  getDateRange,
+  summarizeTransactions,
+  toDateInputValue,
+} from "@/lib/analytics";
 
 interface Transaction {
   id: string;
@@ -117,6 +127,10 @@ export default function TransactionsPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [filterType, setFilterType] = useState<string>("ALL");
   const [refreshing, setRefreshing] = useState(false);
+  const [dateFilter, setDateFilter] = useState<DateFilterKey>("TODAY");
+  const [customStart, setCustomStart] = useState(toDateInputValue(new Date()));
+  const [customEnd, setCustomEnd] = useState(toDateInputValue(new Date()));
+  const [now, setNow] = useState(new Date());
 
   const fetchTransactions = async () => {
     try {
@@ -138,6 +152,11 @@ export default function TransactionsPage() {
     fetchTransactions();
     // Auto-refresh every 1 second for near real-time updates
     const interval = setInterval(fetchTransactions, 1000);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => setNow(new Date()), 1000);
     return () => clearInterval(interval);
   }, []);
 
@@ -171,8 +190,13 @@ export default function TransactionsPage() {
     fetchTransactions();
   };
 
+  const analyticsRange = getDateRange(dateFilter, customStart, customEnd, now);
+  const dateFilteredTransactions = filterByDateRange(transactions, analyticsRange);
+  const rangeLabel = formatDateRangeLabel(analyticsRange);
+  const analyticsSummary = summarizeTransactions(dateFilteredTransactions);
+
   // Filtering
-  const filtered = transactions.filter((tx) => {
+  const filtered = dateFilteredTransactions.filter((tx) => {
     const matchesType = filterType === "ALL" || tx.type === filterType;
     const matchesSearch =
       searchQuery === "" ||
@@ -186,18 +210,10 @@ export default function TransactionsPage() {
   });
 
   // Summary stats
-  const totalDeposits = transactions
-    .filter((t) => t.type === "DEPOSIT")
-    .reduce((sum, t) => sum + t.amount, 0);
-  const totalWithdrawals = transactions
-    .filter((t) => t.type === "WITHDRAWAL")
-    .reduce((sum, t) => sum + t.amount, 0);
-  const totalInventory = transactions
-    .filter((t) => t.type === "INVENTORY_BUY")
-    .reduce((sum, t) => sum + t.amount, 0);
-  const totalPayments = transactions
-    .filter((t) => t.type === "PAYMENT")
-    .reduce((sum, t) => sum + t.amount, 0);
+  const totalDeposits = analyticsSummary.deposits;
+  const totalWithdrawals = analyticsSummary.withdrawals;
+  const totalInventory = analyticsSummary.inventory;
+  const totalPayments = analyticsSummary.payouts;
 
   if (loading) {
     return (
@@ -271,7 +287,7 @@ export default function TransactionsPage() {
               +₹{totalDeposits.toFixed(2)}
             </div>
             <p className="text-[10px] text-zinc-500 mt-2">
-              {transactions.filter((t) => t.type === "DEPOSIT").length} deposits
+              {dateFilteredTransactions.filter((t) => t.type === "DEPOSIT").length} deposits in range
             </p>
           </div>
 
@@ -287,7 +303,7 @@ export default function TransactionsPage() {
               -₹{totalWithdrawals.toFixed(2)}
             </div>
             <p className="text-[10px] text-zinc-500 mt-2">
-              {transactions.filter((t) => t.type === "WITHDRAWAL").length} withdrawals
+              {dateFilteredTransactions.filter((t) => t.type === "WITHDRAWAL").length} withdrawals in range
             </p>
           </div>
 
@@ -303,7 +319,7 @@ export default function TransactionsPage() {
               -₹{totalInventory.toFixed(2)}
             </div>
             <p className="text-[10px] text-zinc-500 mt-2">
-              {transactions.filter((t) => t.type === "INVENTORY_BUY").length} purchases
+              {dateFilteredTransactions.filter((t) => t.type === "INVENTORY_BUY").length} purchases in range
             </p>
           </div>
 
@@ -319,10 +335,64 @@ export default function TransactionsPage() {
               -₹{totalPayments.toFixed(2)}
             </div>
             <p className="text-[10px] text-zinc-500 mt-2">
-              {transactions.filter((t) => t.type === "PAYMENT").length} payments
+              {dateFilteredTransactions.filter((t) => t.type === "PAYMENT").length} payments in range
             </p>
           </div>
         </section>
+
+        {/* Date Range Filter */}
+        <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-4 bg-zinc-900/40 border border-zinc-800/80 rounded-2xl p-4 backdrop-blur-sm">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-blue-500/10 text-blue-400 border border-blue-500/20 rounded-lg">
+              <CalendarDays className="w-4 h-4" />
+            </div>
+            <div>
+              <p className="text-sm font-black text-white">Transaction Date Range</p>
+              <p className="text-xs text-zinc-500">
+                Showing ledger analytics for {rangeLabel}.
+              </p>
+            </div>
+          </div>
+          <div className="flex flex-col lg:flex-row lg:items-center gap-3">
+            <div className="flex items-center gap-2 flex-wrap">
+              {DATE_FILTER_OPTIONS.map((option) => {
+                const isActive = dateFilter === option.key;
+                return (
+                  <button
+                    key={option.key}
+                    onClick={() => setDateFilter(option.key)}
+                    className={`px-3 py-1.5 rounded-lg text-xs font-semibold border transition-all cursor-pointer ${
+                      isActive
+                        ? "border-emerald-500/40 text-emerald-400 bg-emerald-950/20"
+                        : "border-zinc-700 text-zinc-500 bg-zinc-950/40 hover:text-zinc-300"
+                    }`}
+                  >
+                    {option.label}
+                  </button>
+                );
+              })}
+            </div>
+            {dateFilter === "CUSTOM" && (
+              <div className="flex items-center gap-2">
+                <input
+                  type="date"
+                  value={customStart}
+                  max={customEnd}
+                  onChange={(event) => setCustomStart(event.target.value)}
+                  className="px-3 py-1.5 bg-zinc-950 border border-zinc-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500"
+                />
+                <span className="text-xs text-zinc-500">to</span>
+                <input
+                  type="date"
+                  value={customEnd}
+                  min={customStart}
+                  onChange={(event) => setCustomEnd(event.target.value)}
+                  className="px-3 py-1.5 bg-zinc-950 border border-zinc-800 rounded-lg text-xs text-white focus:outline-none focus:border-emerald-500"
+                />
+              </div>
+            )}
+          </div>
+        </div>
 
         {/* Search & Filter Bar */}
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 bg-zinc-900/40 border border-zinc-800/80 rounded-2xl p-4 backdrop-blur-sm">
@@ -365,7 +435,7 @@ export default function TransactionsPage() {
 
           {/* Count */}
           <div className="text-xs text-zinc-500 font-mono shrink-0">
-            {filtered.length} / {transactions.length} txns
+            {filtered.length} / {dateFilteredTransactions.length} txns in range
           </div>
         </div>
 
@@ -467,7 +537,7 @@ export default function TransactionsPage() {
                 <p className="text-xs text-zinc-600 mt-1">
                   {searchQuery || filterType !== "ALL"
                     ? "Try adjusting your search or filter."
-                    : "Transactions will appear here as the stand operates."}
+                    : "Transactions will appear here as the stand operates or when the date range changes."}
                 </p>
               </div>
             )}
@@ -482,7 +552,7 @@ export default function TransactionsPage() {
               <Wallet className="w-3.5 h-3.5" />
             </div>
             <span>
-              <span className="text-zinc-300 font-semibold">Opening Balance:</span> ₹{OPENING_BALANCE.toFixed(2)} — This is the seed capital the business started with. It is not recorded as a transaction in the ledger but is included in the Treasury Balance.
+              <span className="text-zinc-300 font-semibold">Opening Balance:</span> ₹{OPENING_BALANCE.toFixed(2)} - This is the seed capital the business started with. Ledger totals below are filtered to {rangeLabel}.
             </span>
           </div>
 
@@ -497,7 +567,7 @@ export default function TransactionsPage() {
                   ₹{balance.toFixed(2)}
                 </span>
                 <span className="text-[10px] text-zinc-500 block mt-0.5">
-                  = ₹{OPENING_BALANCE} opening + ₹{totalDeposits.toFixed(0)} in − ₹{(totalWithdrawals + totalInventory + totalPayments).toFixed(0)} out
+                  = ₹{OPENING_BALANCE} opening + ₹{totalDeposits.toFixed(0)} in - ₹{(totalWithdrawals + totalInventory + totalPayments).toFixed(0)} out for {rangeLabel}
                 </span>
               </div>
             </div>
@@ -519,8 +589,8 @@ export default function TransactionsPage() {
               </div>
               <div className="w-px h-8 bg-zinc-800" />
               <div className="flex flex-col items-center gap-1">
-                <span className="text-white font-bold text-lg font-mono">{transactions.length}</span>
-                <span className="text-zinc-500">Total Txns</span>
+                <span className="text-white font-bold text-lg font-mono">{dateFilteredTransactions.length}</span>
+                <span className="text-zinc-500">Range Txns</span>
               </div>
             </div>
           </div>
