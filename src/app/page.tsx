@@ -668,7 +668,7 @@ export default function Dashboard() {
       <div className="absolute top-1/3 right-1/4 w-[350px] h-[350px] bg-blue-500/5 rounded-full filter blur-[80px] pointer-events-none" />
 
       {/* HEADER SECTION */}
-      <header className="border-b border-zinc-800 bg-zinc-900/40 backdrop-blur-md sticky top-0 z-40">
+      <header className="border-b border-zinc-800 bg-zinc-900/40 backdrop-blur-md z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <div className="p-2.5 bg-gradient-to-tr from-emerald-500 to-teal-400 rounded-xl shadow-lg shadow-emerald-500/10">
@@ -802,11 +802,11 @@ export default function Dashboard() {
 
         {/* CEO MSG FEEDBACK */}
         {ceoMessage && (
-          <div className="bg-emerald-950/20 border border-emerald-500/30 text-emerald-300 text-sm px-6 py-4 rounded-2xl flex items-start gap-3 shadow-md">
-            <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0 mt-0.5" />
+          <div className="latest-result-panel border text-sm px-6 py-4 rounded-2xl flex items-start gap-3 shadow-md">
+            <CheckCircle2 className="latest-result-icon w-5 h-5 shrink-0 mt-0.5" />
             <div>
-              <span className="font-semibold text-white">Latest Operational Result:</span>
-              <p className="mt-1 text-zinc-300">{ceoMessage}</p>
+              <span className="latest-result-label font-semibold">Latest Operational Result:</span>
+              <p className="latest-result-message mt-1">{ceoMessage}</p>
             </div>
           </div>
         )}
