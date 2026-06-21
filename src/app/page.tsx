@@ -868,7 +868,7 @@ export default function Dashboard() {
         </div>
 
         {/* METRICS ROW */}
-        <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-6 gap-6">
+        <section className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-6 gap-6">
           {/* Treasury Wallet Card */}
           <div className="bg-zinc-900/50 border border-zinc-800 rounded-2xl p-6 relative overflow-hidden group">
             <div className="absolute top-0 right-0 p-4 opacity-5 group-hover:opacity-10 transition-opacity">

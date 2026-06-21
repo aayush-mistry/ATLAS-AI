@@ -21,22 +21,23 @@ body {
 /* Spatial dashboard layer: adds depth, material, and map-like hierarchy
    without changing the data-heavy component structure. */
 .spatial-shell {
-  --spatial-ink: #14213d;
-  --spatial-muted: #64748b;
-  --spatial-line: rgba(20, 33, 61, 0.1);
-  --spatial-panel: rgba(255, 255, 255, 0.82);
-  --spatial-panel-strong: rgba(255, 255, 255, 0.94);
-  --spatial-shadow: 0 24px 70px rgba(20, 33, 61, 0.14), 0 8px 24px rgba(20, 33, 61, 0.08);
-  --spatial-shadow-lift: 0 34px 90px rgba(20, 33, 61, 0.2), 0 12px 32px rgba(16, 185, 129, 0.1);
+  --spatial-ink: #102a43;
+  --spatial-muted: #5f7285;
+  --spatial-line: rgba(16, 42, 67, 0.11);
+  --spatial-panel: rgba(244, 251, 255, 0.56);
+  --spatial-panel-strong: rgba(247, 252, 255, 0.78);
+  --spatial-panel-edge: rgba(255, 255, 255, 0.76);
+  --spatial-shadow: 0 24px 72px rgba(35, 58, 88, 0.14), 0 10px 28px rgba(35, 58, 88, 0.08);
+  --spatial-shadow-lift: 0 28px 84px rgba(35, 58, 88, 0.18), 0 12px 36px rgba(14, 165, 233, 0.12);
   isolation: isolate;
   position: relative;
   overflow-x: clip;
   color: var(--spatial-ink) !important;
   background:
-    radial-gradient(circle at 12% 8%, rgba(16, 185, 129, 0.18), transparent 30rem),
-    radial-gradient(circle at 86% 16%, rgba(37, 99, 235, 0.14), transparent 28rem),
-    radial-gradient(circle at 55% 88%, rgba(245, 158, 11, 0.12), transparent 26rem),
-    linear-gradient(135deg, #f8fafc 0%, #eef6f2 48%, #f7fbff 100%) !important;
+    radial-gradient(circle at 10% 12%, rgba(56, 189, 248, 0.28), transparent 28rem),
+    radial-gradient(circle at 88% 14%, rgba(45, 212, 191, 0.22), transparent 27rem),
+    radial-gradient(circle at 48% 88%, rgba(216, 180, 254, 0.22), transparent 31rem),
+    linear-gradient(135deg, #e9fbff 0%, #edfdf7 42%, #f5f1ff 100%) !important;
 }
 
 .spatial-shell::before {
@@ -46,8 +47,8 @@ body {
   z-index: -2;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(20, 33, 61, 0.055) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(20, 33, 61, 0.055) 1px, transparent 1px);
+    linear-gradient(rgba(16, 42, 67, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 42, 67, 0.045) 1px, transparent 1px);
   background-size: 42px 42px;
   mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), transparent 82%);
 }
@@ -59,7 +60,7 @@ body {
   height: 32vh;
   z-index: -1;
   pointer-events: none;
-  background: radial-gradient(ellipse at center, rgba(20, 33, 61, 0.12), transparent 68%);
+  background: radial-gradient(ellipse at center, rgba(45, 95, 120, 0.12), transparent 68%);
   filter: blur(24px);
   transform: translateY(45%);
 }
@@ -68,11 +69,14 @@ body {
   top: 14px;
   margin: 14px auto 0;
   width: min(calc(100% - 24px), 86rem);
-  border: 1px solid rgba(255, 255, 255, 0.72) !important;
+  border: 1px solid var(--spatial-panel-edge) !important;
   border-radius: 24px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(241, 248, 255, 0.76)) !important;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.74), rgba(236, 249, 255, 0.42)),
+    radial-gradient(circle at 14% 0%, rgba(255, 255, 255, 0.82), transparent 18rem) !important;
   box-shadow: var(--spatial-shadow);
-  backdrop-filter: blur(22px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(145%);
+  -webkit-backdrop-filter: blur(16px) saturate(145%);
 }
 
 .spatial-shell > header > div {
@@ -108,7 +112,8 @@ body {
 .spatial-shell .bg-zinc-950\/60,
 .spatial-shell .bg-zinc-950 {
   background: var(--spatial-panel) !important;
-  backdrop-filter: blur(18px) saturate(132%);
+  backdrop-filter: blur(16px) saturate(150%);
+  -webkit-backdrop-filter: blur(16px) saturate(150%);
 }
 
 .spatial-shell .rounded-2xl {
@@ -121,7 +126,7 @@ body {
 
 .spatial-shell .border,
 .spatial-shell .border-b {
-  border-color: rgba(20, 33, 61, 0.11) !important;
+  border-color: rgba(16, 42, 67, 0.12) !important;
 }
 
 .spatial-shell section.bg-zinc-900\/50,
@@ -131,6 +136,7 @@ body {
 .spatial-shell div.bg-zinc-950\/40,
 .spatial-shell div.bg-zinc-950\/60 {
   box-shadow: var(--spatial-shadow);
+  border-color: var(--spatial-panel-edge) !important;
 }
 
 .spatial-shell section.bg-zinc-900\/50,
@@ -152,15 +158,35 @@ body {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.9), transparent 34%),
-    radial-gradient(circle at 85% 12%, rgba(16, 185, 129, 0.1), transparent 15rem);
-  opacity: 0.8;
+    linear-gradient(135deg, rgba(255, 255, 255, 0.74), transparent 34%),
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.62), transparent 12rem),
+    radial-gradient(circle at 88% 16%, rgba(125, 211, 252, 0.16), transparent 14rem);
+  opacity: 0.86;
+}
+
+.spatial-shell section.bg-zinc-900\/50::after,
+.spatial-shell main > section > div.bg-zinc-900\/50::after,
+.spatial-shell main > section > div.bg-zinc-900\/40::after,
+.spatial-shell main > div.bg-zinc-900\/40::after,
+.spatial-shell main > div.bg-zinc-900\/50::after {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(ellipse at 18% 10%, rgba(255, 255, 255, 0.42), transparent 28%),
+    radial-gradient(ellipse at 80% 86%, rgba(14, 165, 233, 0.1), transparent 32%);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.78),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.22),
+    inset 0 -18px 38px rgba(56, 189, 248, 0.06);
 }
 
 .spatial-shell main > section > *,
 .spatial-shell main > div > * {
   position: relative;
-  z-index: 1;
+  z-index: 2;
 }
 
 .spatial-shell main > section > div,
@@ -179,8 +205,9 @@ body {
 .spatial-shell main > section > div:hover,
 .spatial-shell main > div.bg-zinc-900\/40:hover,
 .spatial-shell main > div.bg-zinc-900\/50:hover {
-  transform: translateY(-4px) translateZ(18px);
+  transform: none;
   box-shadow: var(--spatial-shadow-lift);
+  border-color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .spatial-shell button,
@@ -199,8 +226,14 @@ body {
 }
 
 .spatial-shell input {
-  background: rgba(255, 255, 255, 0.78) !important;
+  background: rgba(239, 253, 255, 0.66) !important;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.82), 0 8px 18px rgba(20, 33, 61, 0.05);
+}
+
+.spatial-shell,
+.spatial-shell * {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 .spatial-shell input:focus {
@@ -235,6 +268,56 @@ body {
 
 .spatial-ledger section:last-of-type {
   box-shadow: var(--spatial-shadow);
+}
+
+.spatial-shell main > section:first-of-type > div {
+  min-width: 0;
+}
+
+.spatial-shell main > section:first-of-type > div > .flex:first-child {
+  align-items: flex-start;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.spatial-shell main > section:first-of-type > div > .flex:first-child > span {
+  flex: 1 1 auto;
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  line-height: 1.25;
+}
+
+.spatial-shell main > section:first-of-type > div .text-2xl,
+.spatial-shell main > section:first-of-type > div .text-3xl {
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  line-height: 1.08;
+  letter-spacing: 0;
+  font-size: clamp(1.45rem, 1.7vw, 1.875rem);
+}
+
+.spatial-shell main > section:first-of-type > div p {
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+
+.spatial-shell main > section:first-of-type > div a,
+.spatial-shell main > section:first-of-type > div button,
+.spatial-shell main > section:first-of-type > div .font-mono {
+  min-width: 0;
+}
+
+.spatial-shell main > section:first-of-type > div .border-t {
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1536px) {
+  .spatial-shell main > section:first-of-type > div .text-2xl,
+  .spatial-shell main > section:first-of-type > div .text-3xl {
+    font-size: clamp(1.35rem, 1.35vw, 1.75rem);
+  }
 }
 
 @media (max-width: 768px) {
@@ -425,4 +508,114 @@ main section .text-white,
 
 .animate-spin-slow {
   animation: spin-slow 15s linear infinite;
+}
+
+/* Final glassmorphism pass. Kept at the end so it wins over utility color overrides. */
+.spatial-shell:is(.spatial-shell) .bg-zinc-900,
+.spatial-shell:is(.spatial-shell) .bg-zinc-900\/40,
+.spatial-shell:is(.spatial-shell) .bg-zinc-900\/50,
+.spatial-shell:is(.spatial-shell) .bg-zinc-900\/60,
+.spatial-shell:is(.spatial-shell) .bg-zinc-950,
+.spatial-shell:is(.spatial-shell) .bg-zinc-950\/20,
+.spatial-shell:is(.spatial-shell) .bg-zinc-950\/30,
+.spatial-shell:is(.spatial-shell) .bg-zinc-950\/40,
+.spatial-shell:is(.spatial-shell) .bg-zinc-950\/60 {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.58), rgba(231, 248, 255, 0.3)),
+    rgba(244, 251, 255, 0.48) !important;
+  border-color: rgba(255, 255, 255, 0.78) !important;
+  backdrop-filter: blur(16px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(150%) !important;
+}
+
+.spatial-shell:is(.spatial-shell) main > section > div,
+.spatial-shell:is(.spatial-shell) main > div,
+.spatial-shell:is(.spatial-shell) header {
+  box-shadow:
+    0 24px 72px rgba(35, 58, 88, 0.13),
+    inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.16) !important;
+}
+
+.spatial-shell:is(.spatial-shell) main > section > div:hover,
+.spatial-shell:is(.spatial-shell) main > div:hover {
+  transform: none !important;
+  box-shadow:
+    0 28px 84px rgba(35, 58, 88, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.86),
+    inset 0 1px 0 rgba(255, 255, 255, 0.82) !important;
+}
+
+/* Spatial UI composition inspired by tool-generated interface mockups. */
+.spatial-shell:is(.spatial-shell)::before {
+  background-image:
+    linear-gradient(rgba(16, 42, 67, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(16, 42, 67, 0.045) 1px, transparent 1px),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.7), transparent 32rem);
+  background-size: 44px 44px, 44px 44px, auto;
+}
+
+.spatial-shell:is(.spatial-shell)::after {
+  height: 44vh;
+  background:
+    radial-gradient(ellipse at center, rgba(31, 78, 121, 0.16), transparent 62%),
+    linear-gradient(to bottom, transparent, rgba(255, 255, 255, 0.28));
+  filter: blur(18px);
+}
+
+.spatial-shell:is(.spatial-shell) main {
+  gap: 2.25rem;
+}
+
+.spatial-shell:is(.spatial-shell) header {
+  box-shadow:
+    0 18px 54px rgba(31, 78, 121, 0.15),
+    0 1px 0 rgba(255, 255, 255, 0.82) inset,
+    0 0 0 1px rgba(255, 255, 255, 0.2) inset !important;
+}
+
+.spatial-shell:is(.spatial-shell) main > div,
+.spatial-shell:is(.spatial-shell) main > section {
+  position: relative;
+}
+
+.spatial-shell:is(.spatial-shell) main > section:first-of-type > div {
+  min-height: 176px;
+}
+
+.spatial-shell:is(.spatial-shell) main > section:first-of-type > div:nth-child(odd) {
+  box-shadow:
+    0 24px 68px rgba(31, 78, 121, 0.14),
+    0 12px 24px rgba(45, 212, 191, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.78) !important;
+}
+
+.spatial-shell:is(.spatial-shell) main > section:first-of-type > div:nth-child(even) {
+  box-shadow:
+    0 20px 58px rgba(31, 78, 121, 0.12),
+    0 10px 22px rgba(125, 211, 252, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.76) !important;
+}
+
+.spatial-shell:is(.spatial-shell) main > section:first-of-type > div::before {
+  opacity: 0.72;
+}
+
+.spatial-shell:is(.spatial-shell) main > section:first-of-type > div::after {
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.82),
+    inset 0 -18px 34px rgba(14, 165, 233, 0.06),
+    0 0 0 1px rgba(255, 255, 255, 0.16);
+}
+
+.spatial-shell:is(.spatial-shell) main > section:not(:first-of-type),
+.spatial-shell:is(.spatial-shell) main > div {
+  filter: drop-shadow(0 18px 36px rgba(31, 78, 121, 0.08));
+}
+
+.spatial-shell:is(.spatial-shell) main > section:first-of-type > div:hover {
+  box-shadow:
+    0 28px 78px rgba(31, 78, 121, 0.18),
+    0 0 0 1px rgba(255, 255, 255, 0.88),
+    inset 0 1px 0 rgba(255, 255, 255, 0.86) !important;
 }
