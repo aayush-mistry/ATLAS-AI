@@ -118,8 +118,7 @@ ATLAS-AI/
 │       └── prisma/              # Auto-generated SQLite prisma client
 │
 ├── hardhat.config.cjs           # Blockchain dev network parameters
-├── dev.db                       # Active SQLite Database state
-└── ATLAS_AI_Pitch_Deck.pptx     # 15-slide hackathon presentation
+└── dev.db                       # Active SQLite Database state
 ```
 
 ---
