@@ -172,8 +172,26 @@ When using the dashboard, you can trigger simulation state changes manually usin
 
 ---
 
+## 🔧 Git Configuration & Author Identity
+
+If you need to change the name or email associated with your commits in this repository, run:
+
+```bash
+# Configure for this repository only
+git config user.name "Your Name"
+git config user.email "your-email@example.com"
+```
+
+To update the author information of the most recent commit:
+```bash
+git commit --amend --reset-author --no-edit
+```
+
+---
+
 ## 🛡️ License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
 *Built with ❤️ by Team Meridian for Hack Aarambh 2026.*
+
