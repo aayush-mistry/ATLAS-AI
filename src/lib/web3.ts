@@ -1,7 +1,6 @@
 import { ethers } from "ethers";
 import fs from "fs";
 import path from "path";
-import { prisma } from "./prisma";
 
 // Helper to get contract configuration
 function getContractConfig() {
@@ -15,8 +14,9 @@ function getContractConfig() {
       const abi = JSON.parse(fs.readFileSync(abiPath, "utf8"));
       return { address: addresses.Escrow, abi, deployedReal: addresses.deployedReal };
     }
-  } catch (err: any) {
-    console.warn("Could not read contract config files:", err.message);
+  } catch (err) {
+    const error = err as Error;
+    console.warn("Could not read contract config files:", error.message);
   }
   return {
     address: "0xD3C07974beC39a17e36Ba4A6b4d238FF944BacB4",

@@ -278,8 +278,11 @@ export default function Dashboard() {
 
   // Mount logic & Polling
   useEffect(() => {
-    setMounted(true);
+    const timer = setTimeout(() => {
+      setMounted(true);
+    }, 0);
     fetchAllData();
+    return () => clearTimeout(timer);
   }, []);
 
   // Always refresh dashboard telemetry in real-time every 1 second
@@ -376,9 +379,10 @@ export default function Dashboard() {
       } else {
         setCeoMessage(`CEO Tick execution error: ${data.error || "Unknown error"}`);
       }
-    } catch (err: any) {
-      console.error("CEO tick fail:", err);
-      setCeoMessage(`CEO Tick failed: ${err.message}`);
+    } catch (err) {
+      const error = err as Error;
+      console.error("CEO tick fail:", error);
+      setCeoMessage(`CEO Tick failed: ${error.message}`);
     } finally {
       setIsCeoTicking(false);
     }
@@ -1340,8 +1344,6 @@ export default function Dashboard() {
             <div className="space-y-4 max-h-[380px] overflow-y-auto pr-2 flex-1">
               {jobs.length > 0 ? (
                 jobs.map((job) => {
-                  const hasApplied = job.applications.length > 0;
-                  
                   // Status badge map
                   let statusBadge = "bg-zinc-800 text-zinc-400 border-zinc-700";
                   if (job.status === "OPEN") statusBadge = "bg-blue-950/20 text-blue-400 border-blue-500/20";
@@ -1832,7 +1834,7 @@ export default function Dashboard() {
                 </div>
                 <div className="text-[10px] text-zinc-500 mt-4 leading-relaxed bg-zinc-900/60 p-3 border border-zinc-800 rounded-lg">
                   <span className="font-bold text-zinc-400 block mb-0.5">Note on Impact Calculation:</span>
-                  Impact values represent parsed cash flow adjustments (e.g., expenses incurred for purchases/payouts, or expected price changes) derived from the CEO's projection statements.
+                  Impact values represent parsed cash flow adjustments (e.g., expenses incurred for purchases/payouts, or expected price changes) derived from the CEO&apos;s projection statements.
                 </div>
               </div>
 

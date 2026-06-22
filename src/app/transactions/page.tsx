@@ -9,9 +9,7 @@ import {
   Search,
   Filter,
   Wallet,
-  Download,
   RefreshCw,
-  Cpu,
   Hash,
   Clock,
   DollarSign,
@@ -149,10 +147,15 @@ export default function TransactionsPage() {
   };
 
   useEffect(() => {
-    fetchTransactions();
+    const timer = setTimeout(() => {
+      fetchTransactions();
+    }, 0);
     // Auto-refresh every 1 second for near real-time updates
     const interval = setInterval(fetchTransactions, 1000);
-    return () => clearInterval(interval);
+    return () => {
+      clearTimeout(timer);
+      clearInterval(interval);
+    };
   }, []);
 
   useEffect(() => {
@@ -166,7 +169,7 @@ export default function TransactionsPage() {
     const salesInterval = setInterval(async () => {
       try {
         await fetch("/api/sales", { method: "POST" });
-      } catch (err) {
+      } catch {
         // silently ignore – the fetch above is fire-and-forget
       }
     }, 5000); // every 5 seconds, same cadence as dashboard
@@ -178,7 +181,7 @@ export default function TransactionsPage() {
     const ceoInterval = setInterval(async () => {
       try {
         await fetch("/api/decision", { method: "POST" });
-      } catch (err) {
+      } catch {
         // silently ignore
       }
     }, 45000); // every 45 seconds, same cadence as dashboard

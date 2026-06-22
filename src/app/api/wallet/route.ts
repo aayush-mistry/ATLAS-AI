@@ -19,8 +19,9 @@ export async function GET() {
       address: state?.walletAddress ?? "0x8eCe6838D6CAd5F62A4FE7CEaC32Ff14aE9f6920",
       transactions,
     });
-  } catch (err: any) {
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+  } catch (err) {
+    const error = err as Error;
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }
 
@@ -112,7 +113,8 @@ export async function POST(request: Request) {
 
     return NextResponse.json({ success: false, error: "Invalid action." }, { status: 400 });
 
-  } catch (err: any) {
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+  } catch (err) {
+    const error = err as Error;
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }

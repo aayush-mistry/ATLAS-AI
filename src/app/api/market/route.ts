@@ -7,8 +7,9 @@ export async function GET() {
       where: { id: "singleton" },
     });
     return NextResponse.json({ success: true, market });
-  } catch (err: any) {
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+  } catch (err) {
+    const error = err as Error;
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }
 
@@ -61,7 +62,8 @@ export async function POST() {
     });
 
     return NextResponse.json({ success: true, market: updatedMarket });
-  } catch (err: any) {
-    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
+  } catch (err) {
+    const error = err as Error;
+    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
   }
 }

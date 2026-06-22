@@ -47,9 +47,10 @@ export async function GET() {
       recentLogs,
       activeWorkerCount,
     });
-  } catch (error: any) {
+  } catch (error) {
+    const err = error as Error;
     return NextResponse.json(
-      { success: false, error: error.message },
+      { success: false, error: err.message },
       { status: 500 }
     );
   }
@@ -108,7 +109,8 @@ export async function POST(request: Request) {
     });
 
     return NextResponse.json({ success: true, state: updated });
-  } catch (error: any) {
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  } catch (error) {
+    const err = error as Error;
+    return NextResponse.json({ success: false, error: err.message }, { status: 500 });
   }
 }
